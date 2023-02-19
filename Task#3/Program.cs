@@ -4,11 +4,11 @@
 
 Console.WriteLine("Введите величину таблицы");
 int N = Convert.ToInt32(Console.ReadLine());
-double x = 0;
+double[] arrayN = new double[N];
 
-for (int i = 1; i < N; i++)
+for (int i = 0; i < N - 1; i++)
 {
-    x = Math.Pow(i, 3);
-    Console.Write(x + ", ");
+    arrayN[i] = Math.Pow(i + 1, 3);
+    Console.Write(arrayN[i] + ", ");
 }
 Console.Write(Math.Pow(N, 3));
