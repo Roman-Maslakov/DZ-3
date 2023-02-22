@@ -13,31 +13,47 @@
 //     Console.WriteLine("Да, введенное число является палиндромом");
 // else Console.WriteLine("Нет, число палиндромом не является");
 
-int[] array = new int[5];
+// || Ололо решение||
+// int[] array = new int[5];
 
-Console.WriteLine("Введите пятизначное число. Пропишите каждый разряд построчно");
+// Console.WriteLine("Введите пятизначное число. Пропишите каждый разряд построчно");
 
-for (int i = 0; i < array.Length; i++)
+// for (int i = 0; i < array.Length; i++)
+// {
+//     while (true)
+//     {
+//         array[i] = Convert.ToInt32(Console.ReadLine());
+//         if (array[i] >= 0 && array[i] <= 9) break;
+//         else Console.WriteLine("Вам необходимо ввести цифру, находящуюся в разряде числа, то есть цифру от 0 до 9");
+//     }
+// }
+
+// if (array[0] == 0)
+// {
+//     Console.WriteLine("Введите цифру для последнего разряда, число не может начинаться с 0-я)");
+//     while (true)
+//     {
+//         array[0] = Convert.ToInt32(Console.ReadLine());
+//         if (array[0] >= 1 && array[0] <= 9) break;
+//         else Console.WriteLine("Вам необходимо ввести цифру, находящуюся в последнем разряде числа, то есть цифру от 1 до 9");
+//     }
+// }
+
+// if (array[0] == array[4] && array[1] == array[3])
+//     Console.WriteLine("Да, введенное число является палиндромом");
+// else Console.WriteLine("Нет, число палиндромом не является");
+
+Console.WriteLine("Введите число");
+int number = Convert.ToInt32(Console.ReadLine());
+
+char[] palindrom = number.ToString().ToCharArray();
+
+string answer = string.Empty;
+for (int i = 0; i < palindrom.Length/2; i++)
 {
-    while (true)
-    {
-        array[i] = Convert.ToInt32(Console.ReadLine());
-        if (array[i] >= 0 && array[i] <= 9) break;
-        else Console.WriteLine("Вам необходимо ввести цифру, находящуюся в разряде числа, то есть цифру от 0 до 9");
-    }
+    if (palindrom[i] != palindrom[palindrom.Length - i - 1]) answer = ("Не-а, это не палиндром");
+    else answer = ("OK, palindrom it is");
 }
 
-if (array[0] == 0)
-{
-    Console.WriteLine("Введите цифру для последнего разряда, число не может начинаться с 0-я)");
-    while (true)
-    {
-        array[0] = Convert.ToInt32(Console.ReadLine());
-        if (array[0] >= 1 && array[0] <= 9) break;
-        else Console.WriteLine("Вам необходимо ввести цифру, находящуюся в последнем разряде числа, то есть цифру от 1 до 9");
-    }
-}
+Console.WriteLine(answer);
 
-if (array[0] == array[4] && array[1] == array[3])
-    Console.WriteLine("Да, введенное число является палиндромом");
-else Console.WriteLine("Нет, число палиндромом не является");
